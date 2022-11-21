@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+---
+
+<header>
+    <div class="navbar">
+        <article>
+            <section>Ici le logo</section>
+            <section class="navbar-section-desktop">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Watch List</a></li>
+                    <li><a href="#">My list</a></li>
+                    <li><a href="#">AVATAR</a></li>
+                </ul>
+            </section>
+            <section class="navbar-section-mobile">ici le menu mobile</section>
+        </article>
+    </div>
+</header>
+
+<style>
+    .navbar {
+        /* background-color: #0f0f0f; */
+        /* color: #fff; */
+        padding: 1rem;
+    }
+    article {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navbar-section-desktop {
+        display: none;
+    }
+
+    @media screen and (min-width: 720px) {
+        .navbar-section-mobile {
+            display: none;
+        }
+        .navbar-section-desktop {
+            display: block;
+        }
+        .navbar-section-desktop ul {
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+        }
+    }
+</style>

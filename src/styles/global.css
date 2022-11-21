@@ -1,0 +1,27 @@
+:root {
+    --primary-color: #fff;
+    --bg-primary-color: #0f0f0f;
+}
+body,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--primary-color);
+    background-color: var(--bg-primary-color);
+}
+li {
+    list-style: none;
+}
+a,
+a:visited {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* CLASS */
+.container {
+    max-width: 1920px;
+    margin-inline: auto;
+}
