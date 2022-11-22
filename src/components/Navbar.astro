@@ -8,10 +8,10 @@ import "../styles/global.css";
             <section>Ici le logo</section>
             <section class="navbar-section-desktop">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="#">Watch List</a></li>
                     <li><a href="#">My list</a></li>
-                    <li><a href="#">AVATAR</a></li>
+                    <li><a href="#"><img src="img/avatar_24px.png" alt="icone de profile" class="avatar" /></a></li>
                 </ul>
             </section>
             <section class="navbar-section-mobile">ici le menu mobile</section>
@@ -33,6 +33,15 @@ import "../styles/global.css";
     .navbar-section-desktop {
         display: none;
     }
+    li,
+    a {
+        display: grid;
+        place-content: center;
+        transition: color 0.2s ease-in-out;
+    }
+    a:hover {
+        color: #01b0e3;
+    }
 
     @media screen and (min-width: 720px) {
         .navbar-section-mobile {
@@ -45,6 +54,9 @@ import "../styles/global.css";
             display: flex;
             gap: 1rem;
             margin: 0;
+        }
+        .avatar {
+            max-width: 100%;
         }
     }
 </style>

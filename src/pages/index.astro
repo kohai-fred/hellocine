@@ -1,7 +1,52 @@
 ---
+import Card from "../components/Card.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+const KEY = import.meta.env.API_KEY;
+
+const data = await fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${KEY}&language=fr-FR&page=1&region=US`
+).then((res) => res.json());
+
+const movies = data.results;
+console.log("🚀 ~ file: index.astro ~ line 8 ~ movies", movies[0]);
+// const video = await fetch(`https://api.themoviedb.org/3/movie/${movies[10].id}/videos?api_key=${KEY}`).then((res) =>
+//     res.json()
+// );
+// console.log("🚀 ~ file: index.astro ~ line 16 ~ video", video);
 ---
 
 <MainLayout title="Accueil">
-    <article>Hello World !!!</article>
+    <article>
+        <div class="cards-container">
+            {
+                movies &&
+                    movies.map(
+                        (movie: {
+                            title: string;
+                            poster_path: string;
+                            release_date: string;
+                            id: number;
+                            overview: string;
+                        }) => {
+                            return <Card video={movie} />;
+                        }
+                    )
+            }
+        </div>
+    </article>
 </MainLayout>
+<style>
+    .cards-container {
+        display: grid;
+        gap: clamp(2rem, 4vw, 2.5rem);
+        padding: 20px;
+    }
+    @media screen and (min-width: 450px) {
+        .cards-container {
+            grid-template-columns: repeat(auto-fill, clamp(180px, 20vw, 300px));
+            justify-content: center;
+            margin-inline: auto;
+        }
+    }
+</style>

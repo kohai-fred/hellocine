@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,600;0,800;1,100;1,400;1,600;1,800&display=swap");
 :root {
     --primary-color: #fff;
-    --bg-primary-color: #0f0f0f;
+    --dark: #0f0f0f;
 }
 body,
 ::before,
@@ -9,7 +10,7 @@ body,
     padding: 0;
     box-sizing: border-box;
     color: var(--primary-color);
-    background-color: var(--bg-primary-color);
+    background-color: var(--dark);
 }
 li {
     list-style: none;
